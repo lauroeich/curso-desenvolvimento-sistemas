@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Rosquinhas - Cadastro</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/k3fS2wW/favicon2.png" alt="favicon" type="image/png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            background-color: #ffbdd9;
+            text-align: center;
+        }
+
+        #container {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 700px;
+            width: 800px;
+            font-size: 20px;
+            background-color: #ffffff;
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+
+        #senha {
+            border-color: black;
+            color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        #senha2 {
+            border-color: black;
+            color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        #usuario {
+            border-color: black;
+            color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        #cabecalho {
+
+            height: 200px;
+            background-color: #ffffff;
+            padding-top: 10px;
+        }
+
+        #email {
+            border-color: black;
+            color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        #data {
+            border-color: black;
+            color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        #nome {
+            border-color: black;
+            color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        #botao-cadastro {
+            border-color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            color: #000000;
+            border-radius: 6px
+        }
+
+        #botao-entrar {
+            border-color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            color: #000000;
+            border-radius: 6px
+        }
+
+        #barra {
+            padding: 15px;
+            border-radius: 6px
+        }
+          .link-barra {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+
+
+
+
+        function botao_cadastro() {
+
+
+
+
+
+            let nome = document.getElementById("nome").value;
+            if (nome =="" )
+            return;
+
+            let senha = document.getElementById("senha").value;
+           if(senha== "")
+           return;
+            let senha2 = document.getElementById("senha2").value;
+            if (senha2 === senha) {
+            }
+            else {
+                alert("As senhas não combinam!");
+                return;              
+            }
+           
+
+            let email = document.getElementById("email").value;
+            if (email =="")
+            return;
+            let data = document.getElementById("data").value;
+            if (data=="")
+            return;                    
+            
+            
+        }
+       
+
+    </script>
+
+</head>
+
+<body>
+    <div id="cabecalho">
+        <a href="home.html"> <img src="https://i.ibb.co/56N4XL3/logo-donut.png" alt="logo donut" width="250"></a>
+
+    </div>
+
+    <div id="container">
+        <form>
+            <p><b> Fazer cadastro </b></p>
+
+            <label">
+                <p id="nomeDoUsuario">Nome: </p> <input id="nome" type="text" name="nome"
+                required   placeholder="Insira o seu nome"></label>
+                <label for="senha">
+                    <p id="password">Senha: </p> <input id="senha" type="password" name="senha" size=8 minlength=8 
+                    required  placeholder="********" >
+                </label>
+                <label>
+                    <p id="password">Repita sua senha:</p> <input id="senha2" type="password" name="senha2" size=8
+                    minlength=8 required placeholder="********">
+                </label>
+                <label >
+                    <p id="emailAddress">Email: </p> <input id="email" type="email" name="email" required
+                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}" placeholder="Insira seu e-mail">
+                </label>
+                <label >
+                    <p id="data de mascimento">Data de nascimento: </p> <input id="data" type="date" name="data"
+                        required>
+                </label>
+        </form>
+
+
+
+
+        <div id="barra">
+        <button id="botao-cadastro" onclick="botao_cadastro()">Cadastrar</button>
+        </div>
+       <p>Já possui uma conta?</p> <a class="link-barra" href="login.html">Entrar</a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Rosquinhas - Acessar a loja</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/k3fS2wW/favicon2.png" alt="favicon" type="image/png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            background-color: #ffbdd9;
+            text-align: center;
+        }
+
+        #container {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            width: 800px;
+            font-size: 20px;
+            background-color: #ffffff;
+            padding-top: 100px;
+            padding-bottom: 200px;
+        }
+
+        #botao-login {
+            border-color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            color: #000000;
+        }
+
+        #botao-cadastro {
+            border-color: #000000;
+            background-color: #ffbdd9;
+            padding: 10px;
+            color: #000000;
+        }
+
+        #email {
+            border-color: black;
+            background-color: #ffbdd9;
+            padding: 10px;
+            color: #000000;
+        }
+
+        #senha {
+            border-color: black;
+            background-color: #ffbdd9;
+            padding: 10px;
+            color: #000000;
+
+        }
+
+
+
+        #cabecalho {
+
+            height: 200px;
+            background-color: #ffffff;
+            padding-top: 10px;
+        }
+
+        #barra {
+            padding: 15px;
+
+        }
+
+        .link-barra {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        function botao_login() {
+
+
+            const usuario = { email: "lauro@test.com", senha: "senha123" }
+            const email = (document.getElementById("email").value)
+            const senha = (document.getElementById("senha").value)
+            if (email === usuario.email && senha === usuario.senha) {
+                alert("Você está logado.")
+                console.log("Você está logado.")
+            }
+            else {
+                alert("Usuário ou senha incorreta.")
+                console.log("Usuário ou senha incorreta.")
+            }
+
+        }
+        function botao_cadastro() {
+            alert("Redirecionando para criação de conta na loja Mega Rosquinhas.");
+            console.log("Redirecionando para criação de conta na loja Mega Rosquinhas.");
+
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id="cabecalho">
+        <a href="home.html"> <img src="https://i.ibb.co/56N4XL3/logo-donut.png" alt="logo donut" width="250"></a>
+
+    </div>
+
+    <div id="container">
+        <p><b> Fazer login </b></p>
+        <form>
+            <label>
+                <p id="email1">Email</p> <input id="email" type="text" name="email" />
+            </label>
+            <label>
+                <p id="password">Senha </p> <input id="senha" type="password" name="senha" size=8 maxlength=8 />
+            </label>
+
+            <div id="barra">
+                <button id="botao-login" onclick="botao_login()">Login</button> <br><br>
+                ou <br> <br>
+                <a class="link-barra" href="cadastro.html">Cadastre-se</a>
+            </div>
+        </form>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
