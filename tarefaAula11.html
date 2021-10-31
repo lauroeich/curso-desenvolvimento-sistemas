@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculador em Javascript</title>
+    <link
+      rel="shortcut icon"
+      href="https://i.ibb.co/Jz6DGjd/calculador.png"
+      alt="favicon"
+      type="image/png"
+    />
+
+    <style>
+      body {
+        text-align: center;
+        margin: 0;
+        font-family: "Courier New";
+        background-color: #d3d3d3;
+      }
+      #cabecalho {
+        background-color: #ffffff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      #container {
+        padding-top: 25px;
+      }
+      #resultado {
+        color:  #ff0000;
+        font-size: 50px;
+        font-family: "Courier New";
+        font-weight: bold;
+      }
+      #historico1 {
+        color: blue;
+        font-size: 50px;
+        font-family: "Courier New";
+        font-weight: bold;
+      }
+      #calcular {
+        font-family: "Courier New";
+        padding: 10px;
+        color: #000000;
+        font-size: large;
+      }
+      #operadores {
+        font-family: "Courier New";
+        color: #000000;
+        font-size: large;
+      }
+    </style>
+
+    <script>
+      let historicoDeOperacoes = [];
+      for (let indice = 0; indice < historicoDeOperacoes.length; indice++) {
+        let itemDaLista = historicoDeOperacoes[indice];
+        console.log("Item da lista: " + itemDaLista);
+      }
+
+      function calcularEquacao() {
+        let valorSelect = pegarValorDoSelect("operadores");
+        let valor1 = valorNumericoById("valor1");
+        let valor2 = valorNumericoById("valor2");
+
+        if (valorSelect == "somar") {
+          resultado = valor1 + valor2;
+          historicoDeOperacoes.push(
+            valor1 + " + " + valor2 + " = " + resultado
+          );
+        }
+        if (valorSelect == "subtrair") {
+          resultado = valor1 - valor2;
+          historicoDeOperacoes.push(
+            valor1 + " - " + valor2 + " = " + resultado
+          );
+        }
+        if (valorSelect == "multiplicar") {
+          resultado = valor1 * valor2;
+          historicoDeOperacoes.push(
+            valor1 + " * " + valor2 + " = " + resultado
+          );
+        }
+        if (valorSelect == "dividir") {
+          resultado = valor1 / valor2;
+          historicoDeOperacoes.push(
+            valor1 + " / " + valor2 + " = " + resultado
+          );
+        }
+        let resultadoEquaçao = resultado;
+        document.getElementById("resultado").innerHTML = resultado;
+        console.log(resultado);
+      }
+
+      function pegarValorDoSelect(id) {
+        let select = document.getElementById(id);
+        return select.options[select.selectedIndex].value;
+      }
+      function valorNumericoById(id) {
+        let valor = document.getElementById(id).value;
+        let valorNumerico = parseInt(valor);
+        return valorNumerico;
+      }
+      function mostrarHistorico() {
+        let resultados1 = ""
+        document.getElementById("historico1").innerHTML = historicoDeOperacoes;
+        for (let indice = 0; indice < historicoDeOperacoes.length; indice++ ){
+         let historico2 = historicoDeOperacoes[indice];
+          
+        let  resultadosHistorico= "<dl>" + historico2 + "</dl>";
+        resultados1 = resultados1 +  resultadosHistorico
+
+        }
+        document.getElementById("historico1").innerHTML = resultados1
+
+       
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="cabecalho">
+      <img
+        src="https://i.ibb.co/JHysTz9/calculator-logo.png"
+        alt="logo Calculadora"
+        width="150"
+      />
+    </div>
+    <div id="container">
+      <input id="valor1" type="number" /> <br /><br />
+      <select id="operadores">
+        <option value="somar">Somar</option>
+        <option value="subtrair">Subtrair</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="dividir">Dividir</option>
+      </select>
+      <br /><br />
+
+      <input id="valor2" type="number" /><br />
+      <br />
+
+      <button id="calcular" onclick="calcularEquacao()"><b>Calcular</b></button>
+      <br />
+      <br />
+      <p id="resultado"></p>
+    </div>
+    <button id="histórico" onclick="mostrarHistorico()">
+      <b>Mostrar Histórico</b>
+    </button>
+
+    <ul id="historico1"></ul>
+  </body>
+</html>
